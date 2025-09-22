@@ -66,8 +66,8 @@ by typing the command "history" we get the history of the commands we have writt
 
 ## What I learned
 The shell keeps a history of commands I’ve typed.
-we can use the arrow up and down to scroll through the history
-we can type history mainly, to get a numbered history
+We can use the arrow up and down to scroll through the history.
+We can type history mainly, to get a numbered history
 
 ![screenshot of terminal with history](image1.png)
 
