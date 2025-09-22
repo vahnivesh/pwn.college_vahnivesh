@@ -69,7 +69,7 @@ The shell keeps a history of commands I’ve typed.
 we can use the arrow up and down to scroll through the history
 we can type history mainly, to get a numbered history
 
-![screenshot of terminal with history](/image1.png)
+![screenshot of terminal with history](pwn.college_vahnievsh/Linux_Luminarium/image1.png)
 
 
 ## References
