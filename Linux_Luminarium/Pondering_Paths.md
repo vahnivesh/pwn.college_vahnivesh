@@ -16,7 +16,8 @@ hacker@paths~the-root:~$
 
 ## What I learned
 
-Absolute paths start with '/' and point to a specific file from the root. eg `/pwn`
+Absolute paths start with '/' and point to a specific file from the root. eg `/pwn`.
+I also learnt what a root directory is and how we can access different files and directories from the terminal.
 
 ## References
 
