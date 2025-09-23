@@ -3,24 +3,23 @@
 ### nvoke the pwn program using its absolute path
 **Flag:** `pwn.college{UNf7TZOGLLquS4zIYXSFw8HQCRo.QX4cTO0wyM3gjNzEzW}`
 
-explain your solve and how you got to it, explain any incorrect tangents you went on while solving.
-
-to put code snippets, put three backticks and for images and all other stuff you wish to put here, refer to the documentation given to you.
-
-don't style it too much, your solve should be readable and understandable by you so that when you have doubts, you refer to your own writeups, instead of gpt.
-
+the '/' indicates the root directory, and suppose when typed with a /your_filename then it becomes the absolute path.
+Meaning in this, the root searches for a "your_filename" in the directory and excute it if present.
+In this case, when typed pwn as a absolute path, it finds the excutable file and run it, hence giving the flag
 ```
-#!/bin/bash
-
-example triple ticks for bash
-
-pwn.college{helloworld}
+hacker@paths~the-root:~$ /pwn
+BOOM!!!
+Here is your flag:
+pwn.college{UNf7TZOGLLquS4zIYXSFw8HQCRo.QX4cTO0wyM3gjNzEzW}
+hacker@paths~the-root:~$
 ```
 
 ## What I learned
 
-explain what you learned
+Absolute paths start with '/' and point to a specific file from the root. eg `/pwn`
 
 ## References
 
-Add an references or videos you used while solving the challenge.
+NIL
+
+..................................................................
