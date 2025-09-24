@@ -1,4 +1,4 @@
-# cat: not the pet, but the command
+# 1.cat: not the pet, but the command
 
 ### Reading the Flag in a file named flag using cat
 
@@ -28,7 +28,7 @@ NIL
 ..................................................................
 
 
-# catting absolute paths
+# 2.catting absolute paths
 
 ### Reading the Flag in a absolute path
 
@@ -56,7 +56,7 @@ NIL
 
 ..................................................................
 
-# more catting practice
+# 3.more catting practice
 
 ### catting practice
 
@@ -88,7 +88,7 @@ NIL
 
 ..................................................................
 
-# grepping for a neddle in a haystack
+# 4.grepping for a neddle in a haystack
 
 ### using grep command to search a string from a big file.
 
@@ -118,7 +118,7 @@ NIL
 ..................................................................
 
 
-# comparing files
+# 5.comparing files
 
 ### comparing files and finding the difference in them
 
