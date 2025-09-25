@@ -537,20 +537,29 @@ NIL
 
 ..................................................................
 
-# 14. 
+# 14. Linking files
 
 ### 
 
-**Flag:** ``
+**Flag:** `pwn.college{cDA5m4CMsXijIXvrDTdtsmees5q.QX5ETN1wyM3gjNzEzW}`
 
-
+I swapped the symlink to point at /flag, so the program printed the flag
+and thus i got the flag.
 
 ```
-
+hacker@commands~linking-files:~$ ln -s /flag /home/hacker/not-the-flag
+hacker@commands~linking-files:~$ ls -l /home/hacker/not-the-flag
+cat /home/hacker/not-the-flag
+lrwxrwxrwx 1 hacker hacker 5 Sep 25 17:32 /home/hacker/not-the-flag -> /flag
+cat: /home/hacker/not-the-flag: Permission denied
+hacker@commands~linking-files:~$ /challenge/catflag
+About to read out the /home/hacker/not-the-flag file!
+pwn.college{cDA5m4CMsXijIXvrDTdtsmees5q.QX5ETN1wyM3gjNzEzW}
 ```
 
 ## What I learned
-
+i learned what symbolic linkages are and what hard and soft is.
+using ln -s 
 
 ## References
 
