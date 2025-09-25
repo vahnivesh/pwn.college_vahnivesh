@@ -1,4 +1,4 @@
-# The Root
+# 1. The Root
 
 ### invoke the pwn program using its absolute path
 **Flag:** `pwn.college{UNf7TZOGLLquS4zIYXSFw8HQCRo.QX4cTO0wyM3gjNzEzW}`
@@ -25,7 +25,7 @@ NIL
 
 ..................................................................
 
-# Porgram and absolute paths
+# 2. Porgram and absolute paths
 
 ### execute the program using its absolute path
 **Flag:** `pwn.college{UN8plLGxAv340qW8xibCI3KOxeD.QX1QTN0wyM3gjNzEzW}`
@@ -53,7 +53,7 @@ NIL
 
 ..................................................................
 
-# Postion thy shelf
+# 3. Postion thy shelf
 
 ### execute the program at a specific path using cd(change directory)
 **Flag:** `pwn.college{c9vGM5J-xuJUEQeavNWQzKdTDV8.QX2QTN0wyM3gjNzEzW}`
@@ -83,7 +83,7 @@ NIL
 
 ..................................................................
 
-# Postion elsewhere
+# 4. Postion elsewhere
 
 ### execute the program at a specific path using cd(change directory)
 **Flag:** `pwn.college{8GbsdOekPCCTuJV_u5AWKmOFLNS.QX3QTN0wyM3gjNzEzW}`
@@ -113,7 +113,7 @@ NIL
 
 ..................................................................
 
-# Postion yet elsewhere
+# 5. Postion yet elsewhere
 
 ### execute the program at a specific path using cd(change directory)
 **Flag:** `pwn.college{Y1O_335S06iafB1Yt22TYLeDiKs.QX4QTN0wyM3gjNzEzW}`
@@ -143,7 +143,7 @@ NIL
 ..................................................................
 
 
-# Implicits relative paths, from\
+# 6. Implicits relative paths, from\
 
 ### execute the program at a specific path in our cwd(curret working directory)
 **Flag:** `pwn.college{4-up_KVcLH2X2JXSQHemeDkkkV7.QX5QTN0wyM3gjNzEzW}`
@@ -172,7 +172,7 @@ NIL
 
 ..................................................................
 
-# explicit relative paths, from\
+# 7. explicit relative paths, from\
 
 ### execute the program at a specific path in our cwd(curret working directory) using relative path
 **Flag:** `pwn.college{4YYkOZtUNZrYmPRIyAEpPhSCv5j.QXwUTN0wyM3gjNzEzW}`
@@ -212,7 +212,7 @@ NIL
 ..................................................................
 
 
-# Implicit relative path
+# 8. Implicit relative path
 
 ### execute the program at a specific path using ./
 **Flag:** `pwn.college{ExkgTMFRuvyQXdiBYfwzSwolpqy.QXxUTN0wyM3gjNzEzW}`
@@ -252,7 +252,7 @@ NIL
 ..................................................................
 
 
-# Home sweet home
+# 9. Home sweet home
 
 ### In this challenge, /challenge/run will write a copy of the flag to any file we specify as an argument on the commandline, with these constraints: 1.Your argument must be an absolute path. 2.The path must be inside your home directory. 3.Before expansion, your argument must be three characters or less.
 
