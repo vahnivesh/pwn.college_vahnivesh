@@ -1,4 +1,4 @@
-# Intro to Commands
+# 1. Intro to Commands
 
 ### In this challenge, you will invoke your first command! When you type a command and hit enter, the command will be invoked, as so:
 
@@ -23,7 +23,7 @@ NIL
 
 .....................................................
 
-# Intro to Arguments
+# 2. Intro to Arguments
 
 ### In this challenge, we will learn about commands with arguments.
 
@@ -46,7 +46,7 @@ NIL
 .......................................................
 
 
-# Command History
+# 3. Command History
 
 
 
