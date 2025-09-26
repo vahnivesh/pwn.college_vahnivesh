@@ -163,21 +163,82 @@ NIL
 
 ..................................................................
 
-# 
+# 6. Helpful Programs
 
-### 
+### using documentations for man less pages using --help or -h
 
-**Flag:** ``
+**Flag:** `pwn.college{EEdYlY-TMqhw2ZoPDOvVk07cE1L.QX3IDO0wyM3gjNzEzW}`
 
-
+as per the challenge, using /challenge/challenge --help to get the help page.  after reading the optional agruments it said about `-g value` and `-p print_value` so first i did `/challenge/challenge -p` the value then i got secret value as 207, then i did `/challenge/challenge -g 207` and thus got flag
 
 ```
+hacker@man~helpful-programs:~$ help challenge
+bash: help: no help topics match `challenge'.  Try `help help' or `man -k challenge' or `info challenge'.
+hacker@man~helpful-programs:~$ /challenge --help
+bash: /challenge: Is a directory
+hacker@man~helpful-programs:~$ /challenge/challenge --help
+usage: a challenge to make you ask for help [-h] [--fortune] [-v]
+                                            [-g GIVE_THE_FLAG] [-p]
 
+optional arguments:
+  -h, --help            show this help message and exit
+  --fortune             read your fortune
+  -v, --version         get the version number
+  -g GIVE_THE_FLAG, --give-the-flag GIVE_THE_FLAG
+                        get the flag, if given the correct value
+  -p, --print-value     print the value that will cause the -g
+                        option to give you the flag
+hacker@man~helpful-programs:~$ /challenge/challenge -p
+The secret value is: 207
+hacker@man~helpful-programs:~$ /challenge/challenge -g 207
+Correct usage! Your flag: pwn.college{EEdYlY-TMqhw2ZoPDOvVk07cE1L.QX3IDO0wyM3gjNzEzW}
 
 ```
 
 ## What I learned
 
+i learned how to use --help and other optional arguments.
+
+
+## References
+
+NIL
+
+..................................................................
+
+# 7. Help for builtins
+
+### invoking the flag using builtins
+
+**Flag:** `pwn.college{gYAVtqmEFDw9WwHLy6PXTDfGDLl.QX0ETO0wyM3gjNzEzW}`
+
+as per the challenge, using builtins we are suppose to get the documentation of challenge.
+using `help challenge` gave the builtin command for the challenge.
+in that there was `--secret VALUE` which prints the flag if the value is correct. then the ran the command `challenge --secret gYAVtqmE` to get the flag.
+
+
+
+
+```
+hacker@man~help-for-builtins:~$ help challenge
+challenge: challenge [--fortune] [--version] [--secret SECRET]
+    This builtin command will read you the flag, given the right arguments!
+
+    Options:
+      --fortune         display a fortune
+      --version         display the version
+      --secret VALUE    prints the flag, if VALUE is correct
+
+    You must be sure to provide the right value to --secret. That value
+    is "gYAVtqmE".
+hacker@man~help-for-builtins:~$ challenge --secret gYAVtqmE
+Correct! Here is your flag!
+pwn.college{gYAVtqmEFDw9WwHLy6PXTDfGDLl.QX0ETO0wyM3gjNzEzW}
+
+```
+
+## What I learned
+i learned what buitins are, and how to invoke them and read them
 
 ## References
 
