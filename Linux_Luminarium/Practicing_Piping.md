@@ -446,18 +446,25 @@ NIL
 
 # 11. Process Subsitution for input
 
-### 
+### process subsitution using >(command)
 
-**Flag:** ``
+**Flag:** `pwn.college{o489ZDhC_V37vZxZHnUizHyMUEj.0lNwMDOxwyM3gjNzEzW}`
 
-
+as per the challenge we are suppose the compare the outputs of two directories at the same time. we can do this by saving the file of directory 1 output and 2 output and then commparing them by diff. but ofcourse there is a faster way by using process subsitution. which is basically >(command). i did `diff >(/challenge/print_decoys) <(/challenge/print_decoys_and_flag)` and thus got the flag
 
 ```
+hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys) <(/challenge/print_decoys_and_flag)
+84a85
+> pwn.college{o489ZDhC_V37vZxZHnUizHyMUEj.0lNwMDOxwyM3gjNzEzW}
+hacker@piping~process-substitution-for-input:~$
+
 
 
 ```
 
 ## What I learned
+
+I learned how to use diff and output togther using subsitution process >(command)
 
 
 ## References
@@ -469,19 +476,28 @@ NIL
 
 # 12. Writing multiple programss
 
-### 
+### combining tee and  subsitution process
 
-**Flag:** ``
+**Flag:** `pwn.college{k2hD95iJQn70U4mDFWyynglxRZu.QXwgDN1wyM3gjNzEzW}`
 
-
+as per the challenge we must run /challenge/hack output into /challenge/the and /challenge/planet simultaneously. so using subsitution process and tee to duplicate the outputs.
+so i ran `/challenge/hack | tee >(/challenge/the) >(/challenge/planet)`
+and thus got the flag.
 
 ```
-
+hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >(/challenge/the) >(/challenge/planet)
+This secret data must directly and simultaneously make it to /challenge/the and
+/challenge/planet. Don't try to copy-paste it; it changes too fast.
+12914235833212319
+Congratulations, you have duplicated data into the input of two programs! Here
+is your flag:
+pwn.college{k2hD95iJQn70U4mDFWyynglxRZu.QXwgDN1wyM3gjNzEzW}
+hacker@piping~writing-to-multiple-programs:~$
 
 ```
 
 ## What I learned
-
+I got practice of using both pipe operator tee, subsitution process
 
 ## References
 
@@ -494,17 +510,22 @@ NIL
 
 ### 
 
-**Flag:** ``
+**Flag:** `pwn.college{cilKFuTDI0o9vo5p1uCP52bAobq.QXxQDM2wyM3gjNzEzW}`
 
-
+as per the challenge we need to only stderr output to /challenge/the and stdout to  /challenge/planet. so i did `/challenge/hack 2>>(/challenge/the) | /challenge/planet` 
+thus i got the flag.
 
 ```
-
+hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack 2> >(/challenge/the) | /challenge/planet
+Congratulations, you have learned a redirection technique that even experts
+struggle with! Here is your flag:
+pwn.college{cilKFuTDI0o9vo5p1uCP52bAobq.QXxQDM2wyM3gjNzEzW}
 
 ```
 
 ## What I learned
 
+i got practice for stderr and stdout.
 
 ## References
 
@@ -515,18 +536,39 @@ NIL
 
 # 14. Named pipes
 
-### 
+### naming pipes using fifo
 
-**Flag:** ``
+**Flag:** `pwn.college{QP8dtgzDss-2zO70M7jbiJGCdeN.01MzMDOxwyM3gjNzEzW}`
 
-
+in this we will use First (byte) In, First (byte) Out. FIFO to create a pipe name. using mkfifo. using `mkfifo /tmp/flag_fifo` it created a fifo file there.
+then i had to redirect the stdout to from /challenge/run. doing this i had to use two terminals.
+as per the critera of fifo file. it must be read too while stdoutputing it. so i ran `/challenge/run > /tmp/flag_fifo` and in another terminal i did `cat /tmp/flag_fifo` which gave me the flag
 
 ```
+hacker@piping~named-pipes:~$ mkfifo /tmp/flag_fifo
+hacker@piping~named-pipes:~$ /challenge/run > /tmp/flag_fifo
+You're successfully redirecting /challenge/run to a FIFO at /tmp/flag_fifo!
+Bash will now try to open the FIFO for writing, to pass it as the stdout of
+/challenge/run. Recall that operations on FIFOs will *block* until both the
+read side and the write side is open, so /challenge/run will not actually be
+launched until you start reading from the FIFO!
+hacker@piping~named-pipes:~$
 
+
+terminal 2
+
+
+hacker@piping~named-pipes:~$ cat /tmp/flag_fifo
+You've correctly redirected /challenge/run's stdout to a FIFO at
+/tmp/flag_fifo! Here is your flag:
+pwn.college{QP8dtgzDss-2zO70M7jbiJGCdeN.01MzMDOxwyM3gjNzEzW}
+hacker@piping~named-pipes:~$
 
 ```
 
 ## What I learned
+
+I learned how to name pipes using mkfifo which creates fifo files.
 
 
 ## References
