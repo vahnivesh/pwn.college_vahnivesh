@@ -402,18 +402,39 @@ NIL
 
 # 10. Duplicating piped data using tee
 
-### 
+### using tee to read the outputs while redirecting.
 
-**Flag:** ``
+**Flag:** `pwn.college{orBSswLeqS6fYJEkh9UOcy_uNuA.QXxITO0wyM3gjNzEzW}`
 
+as per the challenge we will use tee, 
+at first we need to cat pwn to get the secret key. which is `orBSswLe` then we must use `/challenge/pwn --secret orBSswLe | /challenge/college` and thus got the flag.
 
 
 ```
+hacker@piping~duplicating-piped-data-with-tee:~$ cat pwn
+Usage: /challenge/pwn --secret [SECRET_ARG]
 
+SECRET_ARG should be "orBSswLe"
+hacker@piping~duplicating-piped-data-with-tee:~$ ^C
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn --secret orBSswLe
+Processing...
+You must pipe the output of /challenge/pwn into /challenge/college (or 'tee'
+for debugging).
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwm | /challenge/college
+bash: /challenge/pwm: No such file or directory
+/challenge/secret needs to the on the receiving end of the output of
+'/challenge/pwn' (or 'tee' for debugging).
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn --secret orBSswLe | /challenge/college
+Processing...
+Correct! Passing secret value to /challenge/college...
+Great job! Here is your flag:
+pwn.college{orBSswLeqS6fYJEkh9UOcy_uNuA.QXxITO0wyM3gjNzEzW}
 
 ```
 
 ## What I learned
+
+i learned about tee and how to it will printout the pipe operator.
 
 
 ## References
@@ -423,53 +444,7 @@ NIL
 ..................................................................
 
 
-# 11. 
-
-### 
-
-**Flag:** ``
-
-
-
-```
-
-
-```
-
-## What I learned
-
-
-## References
-
-NIL
-
-..................................................................
-
-
-# 12. 
-
-### 
-
-**Flag:** ``
-
-
-
-```
-
-
-```
-
-## What I learned
-
-
-## References
-
-NIL
-
-..................................................................
-
-
-# 13. 
+# 11. Process Subsitution for input
 
 ### 
 
@@ -492,7 +467,53 @@ NIL
 ..................................................................
 
 
-# 14. 
+# 12. Writing multiple programss
+
+### 
+
+**Flag:** ``
+
+
+
+```
+
+
+```
+
+## What I learned
+
+
+## References
+
+NIL
+
+..................................................................
+
+
+# 13. split piping stderr and stdout
+
+### 
+
+**Flag:** ``
+
+
+
+```
+
+
+```
+
+## What I learned
+
+
+## References
+
+NIL
+
+..................................................................
+
+
+# 14. Named pipes
 
 ### 
 
