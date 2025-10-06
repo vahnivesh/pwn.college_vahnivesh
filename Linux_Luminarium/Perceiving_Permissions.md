@@ -40,6 +40,8 @@ NIL
 
 **Flag:** `pwn.college{sj0dQEdFntOOuKDrMwSHf-yPmhz.QXxcjM1wyM3gjNzEzW}`
 
+as per the challenge i did chgrp change group to hacker, and then did cat /flag
+
 
 
 ```
@@ -53,6 +55,8 @@ pwn.college{sj0dQEdFntOOuKDrMwSHf-yPmhz.QXxcjM1wyM3gjNzEzW}
 ```
 
 ## What I learned
+
+I learned how to use chgrp command
 
 
 ## References
@@ -68,6 +72,8 @@ NIL
 ### 
 
 **Flag:** `pwn.college{AgZ3ybihwJHLzgGdLrZc0aFUOGv.QXycjM1wyM3gjNzEzW}`
+
+as per the challenge, we are suppose to id and chgrp to that group in this grp23704, and get the flag
 
 
 
@@ -87,6 +93,9 @@ hacker@permissions~fun-with-groups-names:~$
 
 ## What I learned
 
+I learned how to use id
+
+
 
 ## References
 
@@ -101,6 +110,8 @@ NIL
 ### 
 
 **Flag:** `pwn.college{whD0teOAgeI51ptnyDgbE3Xb9hy.QXzcjM1wyM3gjNzEzW}`
+
+
 
 
 
@@ -166,6 +177,8 @@ NIL
 ### 
 
 **Flag:** `pwn.college{EtsHBxUY08vVOP-99qz8UkfCNSq.QXwEjN0wyM3gjNzEzW}`
+
+as per the challenge, we are practicing, chmod change mod commands, and thus got the flag.
 
 
 
@@ -657,6 +670,8 @@ NIL
 ### 
 
 **Flag:** `pwn.college{Y2Wy3wxOE9liHSnwgzfmSp_b1aB.QXzEjN0wyM3gjNzEzW}`
+
+as per the challenge, we use chmod u+s to enter suid bit program, and thus entered flag, and did cat /flag, which gave the flag.
 
 
 
