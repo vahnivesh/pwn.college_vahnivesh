@@ -308,11 +308,13 @@ NIL
 ..................................................................
 
 
-# 11. 
+# 11.Coco Conjecture 
 
 ### 
 
-**Flag:** ``
+**Flag:** `citadel{k1ryu_c0c0_h4s_4_g0_4t_4n_uns0lv3d_m4th3m4t1cs_pr0bl3m}`
+
+as per the challenge,it was a math problem, with py script, With the help of the pdf we can make a function that will calculate the collatz steps for each number returned by the server, and using helper.md which is provided along with the pdf, we can modify the script to communicate with the instance via socket or pwntools.
 
 
 
@@ -329,6 +331,207 @@ NIL
 NIL
 
 ..................................................................
+
+# 12. schlagenheim
+
+### 
+
+**Flag:** `citadel{8lackM1D1wa5c00l}`
+
+as per the challenge, we are suppose to convert the wav to midi, using hex editor, after successfully, editing the audio played, after that, i put it in spectogram to read the flag and thus got it.
+
+
+
+```
+
+
+```
+
+## What I learned
+
+
+## References
+
+NIL
+
+..................................................................
+
+# 13. XOR Slide
+
+### 
+
+**Flag:** `citadel{pyr4m1d+x0r}`
+
+as per the challenge, i edited the script and thus got the flag.
+
+
+
+```
+from pwn import xor
+
+ct = bytes.fromhex('b31113bd631c7207ec9587b32e686c8b6df255d66f4a987adacf6c283875ded5d1633b5f8823fa0b9bbbfab3195f1a51506afd54e03392ae338d872445c9025d88c8d4425a00a9b4478f86acadbd781df6a4194e376c09145a6f9afcbe02d36b5709f74d910edf94552dc4680041d6717fea824718c21385bdfd6176f722100548336d10ead87f01a95c5497dcb6c2')
+wrapper = [
+    b'bro i have a cRAzy story to tell you i went to ant4rctica and BOOM i saw a random citadel{', 
+    b'} it was crazy like how did it get there??'
+]
+
+lf = len(ct)
+lks = len(wrapper[0] + wrapper[1])
+lr = lf - lks
+
+ks = bytearray(lks)
+x0 = lambda i, arr: xor(ct[i], wrapper[0][i], *arr)
+x1 = lambda i, arr: xor(ct[i], wrapper[1][i], *arr)
+
+for i in range(len(wrapper[0])):
+    ks[i] = int.from_bytes(x0(i, ks[max(0, i - lr):i]))
+
+for i in range(-1, -len(wrapper[1]) - 1, -1):
+    a = ks[lks + i : min(lks + i + lr + 1, lks)]
+    ks[i] = int.from_bytes(x1(i, a))
+
+print(f'ks: {ks.hex()}')
+
+flag = bytearray(ct)
+
+for i in range(len(flag) - len(ks) + 1):
+    for j in range(len(ks)):
+        flag[i + j] = flag[i + j] ^ ks[j]
+
+print(flag.decode())
+
+```
+
+## What I learned
+
+
+## References
+
+NIL
+
+..................................................................
+
+
+# 14. The Sound of Music
+
+### 
+
+**Flag:** `citadel{c0mputers_st0pped_exchang1ng_1nf0rmat10n_n_started_shar1ng_st0r1es_n_then_they_were_n0where_t0_be_f0und}`
+
+this a part 2 oinst for citadweller, first i went to last.fm where in description i found the first half the flag, then in the music board, there i found the 2nd half, and following the link below it, i went to spotify page, where i would the final half, and thus joined and got the flag.
+
+
+
+```
+
+
+```
+
+## What I learned
+
+
+## References
+
+NIL
+
+..................................................................
+
+
+# 15. Echoes and Pings
+
+### 
+
+**Flag:** `citadel{1_r34lly_w4nt_t0_st4y_4t_y0ur_h0us3}`
+
+using wireshark getting the pings, and then uploading those url to aduacity got me the flag.
+
+
+
+```
+
+
+```
+
+## What I learned
+
+
+## References
+
+NIL
+
+..................................................................
+
+
+# 16. The Ripper
+
+### 
+
+**Flag:** `citadel{fake_flag_4_fake_pl4y3rs}`
+
+this was really easy, as practice in pwn college, i used john the ripper, and thus got the flag.
+
+
+
+```
+vahnivesh@VAHNI:/mnt/e$ john --wordlist=wordlist.txt hash.txt
+Loaded 1 password hash (bcrypt [Blowfish 32/64 X3])
+No password hashes left to crack (see FAQ)
+vahnivesh@VAHNI:/mnt/e$ john --show hash.txt
+?:fake_flag_4_fake_pl4y3rs
+
+1 password hash cracked, 0 left
+vahnivesh@VAHNI:/mnt/e$
+
+```
+
+## What I learned
+
+
+## References
+
+NIL
+
+..................................................................
+
+# 17. AetherCorp NetprobeX
+
+### 
+
+**Flag:** `citadel{bl4ck51t3_4cc3ss_gr4nt3d}`
+
+as per the challenge, we had to bypass the ping commands, and use cat %0atac etc commands,
+so we did that and i found a path with blacksite.dat file,and thus got the flag.
+
+
+
+```
+Figure out that %0A can be used to chain commands.
+Using ls command, we can find the files in the directory.
+Using less command, we can read the contents of the mission_briefing.txt file.
+The file hints that the key is hidden deep within the AetherCorp network.
+Find the aethercorp directory in /var/lib/ and navigate to it.
+Use ls command to find the files in the aethercorp directory.
+Use ls /var/lib/aethercorp/archive -a command to find .secrets directory.
+Use ls /var/lib/aethercorp/archive/.secrets command to find blacksite_key.dat file.
+Use less /var/lib/aethercorp/archive/.secrets/blacksite_key.dat command to read the contents of the blacksite_key.dat file and get
+
+```
+
+## What I learned
+
+
+## References
+
+NIL
+
+..................................................................
+
+..................................................................
+
+
+
+
+
 
 
 
