@@ -110,18 +110,47 @@ NIL
 
 # 4. adding commands
 
-### 
+### adding commands
 
-**Flag:** ``
+**Flag:** `pwn.college{0xw-_expZcK7UZABaA_BNOxTNx2.QX2cjM1wyM3gjNzEzW}`
+
+as per the challenge, i first did `nano win` and wrote the script, and exited,.
+then did `chmod 777 win` to make it read,write ex for all.
+then i put `PATH=/home/hacker`.
+then did `/challenge/run` and thus got the flag.
 
 
+Inside nano win:
+
+```
+!#/bin/bash
+read flag < /flag
+echo "$flag"
 
 ```
 
+```
 
+hacker@path~adding-commands:~$ pwd
+/home/hacker
+hacker@path~adding-commands:~$ nano win
+hacker@path~adding-commands:~$ nano win
+hacker@path~adding-commands:~$ cat win
+!#/bin/bash
+read flag < /flag
+echo "$flag"
+hacker@path~adding-commands:~$ chmod 777 win
+hacker@path~adding-commands:~$ PATH=/home/hacker
+hacker@path~adding-commands:~$ /challenge/run
+Invoking 'win'....
+/home/hacker/win: line 1: !#/bin/bash: No such file or directory
+pwn.college{0xw-_expZcK7UZABaA_BNOxTNx2.QX2cjM1wyM3gjNzEzW}
+hacker@path~adding-commands:~$
 ```
 
 ## What I learned
+
+I got practice of using shell scripts.
 
 
 ## References
